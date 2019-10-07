@@ -282,22 +282,22 @@ else
   endif
 endif
 
-if fontconfig_required and not fontconfig_dep.found()
-  fontconfig_dep = dependency('fontconfig', version: fontconfig_req_version,
-                              fallback: ['fontconfig', 'fontconfig_dep'])
-endif
+#if fontconfig_required and not fontconfig_dep.found()
+  #fontconfig_dep = dependency('fontconfig', version: fontconfig_req_version,
+                              #fallback: ['fontconfig', 'fontconfig_dep'])
+#endif
 
-if fontconfig_dep.found()
-  pango_deps += fontconfig_dep
+#if fontconfig_dep.found()
+  #pango_deps += fontconfig_dep
 
-  if fontconfig_pc == 'fontconfig'
-    if fontconfig_dep.version().version_compare('>=2.12.92')
+  #if fontconfig_pc == 'fontconfig'
+    #if fontconfig_dep.version().version_compare('>=2.12.92')
       pango_conf.set('HAVE_FCWEIGHTFROMOPENTYPEDOUBLE', 1)
-    endif
-  elif cc.has_function('FcWeightFromOpenTypeDouble', dependencies: fontconfig_dep)
-    pango_conf.set('HAVE_FCWEIGHTFROMOPENTYPEDOUBLE', 1)
-  endif
-endif
+    #endif
+  #elif cc.has_function('FcWeightFromOpenTypeDouble', dependencies: fontconfig_dep)
+    #pango_conf.set('HAVE_FCWEIGHTFROMOPENTYPEDOUBLE', 1)
+  #endif
+#endif
 
 if pango_conf.has('HAVE_FCWEIGHTFROMOPENTYPEDOUBLE')
   res = 'YES'
@@ -369,11 +369,11 @@ endif
 
 # Remove once Meson gains capability to declare dependencies
 # in a declarative way
-if not cairo_dep.found()
-  cairo_dep = dependency('cairo', version: cairo_req_version,
-                         fallback: ['cairo', 'libcairo_dep'])
-  cairo_found_type = cairo_dep.type_name()
-endif
+#if not cairo_dep.found()
+  #cairo_dep = dependency('cairo', version: cairo_req_version,
+                         #fallback: ['cairo', 'libcairo_dep'])
+  #cairo_found_type = cairo_dep.type_name()
+#endif
 
 pango_font_backends = []
 pango_cairo_backends = []

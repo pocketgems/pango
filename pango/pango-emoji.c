@@ -199,6 +199,10 @@ _pango_EmojiSegmentationCategory (gunichar codepoint)
 }
 
 
+#undef bool
+#undef true
+#undef false
+
 typedef gboolean bool;
 enum { false = FALSE, true = TRUE };
 typedef unsigned char *emoji_text_iter_t;
