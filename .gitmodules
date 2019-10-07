@@ -1,0 +1,12 @@
+[submodule "subprojects/glib"]
+	path = subprojects/glib
+	url = git@github.com:pocketgems/glib.git
+[submodule "subprojects/libffi"]
+	path = subprojects/libffi
+	url = git@github.com:pocketgems/libffi.git
+[submodule "subprojects/fribidi"]
+	path = subprojects/fribidi
+	url = git@github.com:fribidi/fribidi.git
+[submodule "subprojects/harfbuzz"]
+	path = subprojects/harfbuzz
+	url = git@github.com:pocketgems/harfbuzz.git
